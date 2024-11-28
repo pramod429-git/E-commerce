@@ -1,16 +1,71 @@
-#parent{
-    background-color: aqua;
-    padding-left: 50%;
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.logo {
+  width: 100px;
+}
+.nav-items > ul {
+  display: flex;
 }
 
-#heading {
-    color: red;
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+  list-style-type: none;
+  font-size: 18px;
 }
-
-h1 {
-    color: red;
+.search {
+  padding: 10px;
 }
-
-h2{
-    color:  brown;
+.res-logo {
+  width: 100%;
+  height: 130px;
+}
+.res-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.res-card {
+  width: 200px;
+  padding: 5px;
+  margin: 5px;
+}
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+.shimmer-card {
+  margin: 10px;
+  width: 200px;
+  height: 400px;
+  background-color: #f0f0f0;
+}
+.shimmer-containor {
+  display: flex;
+  flex-wrap: wrap;
+}
+.login {
+  padding: 0px 10px;
+  margin: 10px;
+}
+.filter {
+  display: flex;
+}
+.search-btn {
+  cursor: pointer;
+}
+.resInfoHeading {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 25px;
+  margin-top: 10px;
+  box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.735);
+}
+.resMenu {
 }
