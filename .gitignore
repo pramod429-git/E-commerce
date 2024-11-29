@@ -1,3 +1,6 @@
 /node_modules
 /dist
+/heap-20241117-203712-main.heapsnapshot
+/heap-20241117-203712-worker1.heapsnapshot
 .parcel-cache
+

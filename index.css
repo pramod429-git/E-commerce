@@ -67,5 +67,7 @@
   margin-top: 10px;
   box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.735);
 }
-.resMenu {
+.user-class {
+  padding: 5px;
+  border: black solid 1px;
 }
