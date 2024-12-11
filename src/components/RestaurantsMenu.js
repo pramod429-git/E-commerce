@@ -1,40 +1,29 @@
-import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
 import { CDN_URL } from "../utils/constants";
-
+import useRestuarantsMenu from "../utils/useRestaurantsMenu";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const RestaurantsMenu = () => {
   const { restId } = useParams();
 
   console.log({ restId: restId });
 
-  const [resInfo, setResInfo] = useState(null);
+  //const [resInfo, setResInfo] = useState(null);
 
-  useEffect(() => {
-    console.log("useEffect Called");
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    console.log(MENU_API + restId);
-
-    const data = await fetch(MENU_API + restId);
-
-    // const data = await fetch(
-    //   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9141417&lng=74.8559568&restaurantId=74132"
-    // );
-
-    const json = await data.json();
-
-    console.log(json);
-    console.log(json.data);
-    let items = json.data;
-    setResInfo(items);
-    console.log(resInfo);
-  };
+  const resInfo = useRestuarantsMenu(restId);
 
   console.log(resInfo);
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) {
+    return (
+      <div>
+        <h1>Connection Error</h1>
+        <h3>Please check your internet Connection</h3>
+      </div>
+    );
+  }
 
   if (!resInfo) {
     return <Shimmer />;

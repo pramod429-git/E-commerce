@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import ResturentCard from "./ResturentCard";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [lisOfTopRatedRes, setLisOfTopRatedRes] = useState([]);
@@ -28,6 +29,17 @@ const Body = () => {
     setLisOfTopRatedRes(cardsArray);
     setFilterdResturent(cardsArray);
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) {
+    return (
+      <div>
+        <h1>Connection Error</h1>
+        <h3>Please check your internet Connection</h3>
+      </div>
+    );
+  }
 
   if (lisOfTopRatedRes.length === 0) {
     return <Shimmer />;
