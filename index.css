@@ -1,4 +1,8 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
@@ -59,8 +63,8 @@
 }
 .search-btn {
   cursor: pointer;
-}
-.resInfoHeading {
+} */
+/* .resInfoHeading {
   background-color: #fff;
   padding: 20px;
   border-radius: 25px;
@@ -70,4 +74,4 @@
 .user-class {
   padding: 5px;
   border: black solid 1px;
-}
+} */
